@@ -22,7 +22,7 @@
     background: rgb(44, 60, 69);
     background: linear-gradient(135deg, rgb(47, 56, 84) 0%, rgb(24, 105, 148) 100%);
     background-size: 200% 200%;
-    animation: header-bg-animation 10s infinite linear;
+    /*animation: header-bg-animation 10s infinite linear;*/
     z-index: 1;
     opacity: 0;
     -webkit-transition: .3s;
