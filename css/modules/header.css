@@ -1,0 +1,132 @@
+.header {
+    width: 100%;
+    padding: 23px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .5s, background .3s .1s;
+    z-index: 100;
+}
+
+.header::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(44, 60, 69);
+    background: linear-gradient(135deg, rgb(47, 56, 84) 0%, rgb(24, 105, 148) 100%);
+    background-size: 200% 200%;
+    animation: header-bg-animation 10s infinite linear;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+}
+
+.header.fixed {
+    padding: 15px 10%;
+}
+
+.header.fixed::before {
+    opacity: 1;
+}
+
+@keyframes header-bg-animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+@-webkit-keyframes header-bg-animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+@-moz-keyframes header-bg-animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.title {
+    font-weight: 800;
+    opacity: 0.8;
+    z-index: 10;
+    font-size: 1.1em;
+}
+
+.info {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    margin-right: 30px;
+}
+
+.cv-btn {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
+    padding: 13px 22px;
+    transition: all .5s, border-radius .5s .2s ease;
+    border: 1px solid rgba(1, 1, 1, 0);
+}
+
+.cv-btn:hover {
+    background-color: rgba(31, 77, 164, 0.5);
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    border-radius: 22px;
+}
+
+.header.fixed .cv-btn {
+    padding: 10px 22px;
+}
+
+.header.fixed .cv-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.download-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}

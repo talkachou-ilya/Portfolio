@@ -1,0 +1,68 @@
+.social-block {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 7px 7px 7px 5px;
+    background: rgb(206, 244, 244);
+    display: flex;
+    flex-direction: column;
+    /*-webkit-border-radius: 0  20px 30px 0;*/
+    /*-moz-border-radius: 0 30px 30px 0;*/
+    border-radius: 0 20px 20px 0;
+
+    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+
+    opacity: 0.5;
+
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.social-block:hover {
+    opacity: 1;
+}
+
+.social-link {
+    width: 35px;
+    height: 35px;
+    margin: 3px 0;
+    /*background-color: #000;*/
+    background-position: center center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.social-link:hover {
+    background-color: #b0c9d2;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.social-link.github {
+    background-image: url("../../images/Social Icons/github.png");
+}
+
+.social-link.vk {
+    background-image: url("../../images/Social Icons/vk.png");
+}
+
+.social-link.telegram {
+    background-size: 62%;
+    background-position: 45% center;
+    background-image: url("../../images/Social Icons/telegram.png");
+}
+
+.social-link.instagram {
+    background-image: url("../../images/Social Icons/instagram.png");
+}
