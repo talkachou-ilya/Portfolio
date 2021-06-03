@@ -90,19 +90,6 @@
     top: 40%;
 
     background-color: rgb(95, 131, 190);
-
-    -webkit-border-radius: 23px;
-    -moz-border-radius: 23px;
-    border-radius: 23px;
-
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-
-    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.4);
 }
 
 .card-btn {
@@ -111,7 +98,9 @@
     height: 100%;
 
     background: rgb(79, 119, 184) url("../../images/right-arrow.png") no-repeat center center / 50%;
+}
 
+.card-link, .card-btn {
     -webkit-border-radius: 23px;
     -moz-border-radius: 23px;
     border-radius: 23px;
