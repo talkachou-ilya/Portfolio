@@ -130,3 +130,13 @@
     height: 18px;
     margin-right: 6px;
 }
+
+@media screen and (max-width: 500px) {
+    .header {
+        padding: 23px 5%;
+    }
+
+    .header.fixed {
+        padding: 15px 7%;
+    }
+}
