@@ -34,40 +34,40 @@ const parseData = response => {
 	return response.map( ( el, index ) => {
 		return new PortfolioItem(
 			index,
-			el[ "gsx$title" ][ "$t" ],
-			el[ "gsx$description" ][ "$t" ],
-			el[ "gsx$image" ][ "$t" ],
-			el[ "gsx$url" ][ "$t" ]
+			el[ "title" ],
+			el[ "description" ],
+			el[ "image" ],
+			el[ "url" ],
 		);
 	} );
 };
 
 const getSheet = id => {
-	let dataSheetUrl = `https://spreadsheets.google.com/feeds/list/${ id }/od6/public/values?alt=json`;
+	let dataSheetUrl = `https://docs.google.com/spreadsheets/d/e/${ id }/pub?output=csv`;
 
-	$.getJSON( dataSheetUrl, response => {
-		let data = parseData( response[ "feed" ][ "entry" ] );
-		data.forEach( el => $( ".content" ).append( el.render() ) );
+	$.ajax( dataSheetUrl ).done( response => {
+		let data = $.csv.toObjects( response );
+		// console.log( data );
+		let parsedData = parseData( data );
+		parsedData.forEach( el => $( ".content" ).append( el.render() ) );
 		disablePreloader( 1000 );
 	} );
 }
 
 $( document ).ready( () => {
-		$( "html" ).niceScroll( {
-			cursorborder : "1px solid rgba(153,156,160, 0.5)",
-			cursorcolor : "rgb(174,186,207)",
-			cursoropacitymin : 0.4,
-			zindex : 1000
-		} );
+	$( "html" ).niceScroll( {
+		cursorborder : "1px solid rgba(153,156,160, 0.5)",
+		cursorcolor : "rgb(174,186,207)",
+		cursoropacitymin : 0.4,
+		zindex : 1000,
+	} );
 
-		$( window ).on( "scroll", () => {
-			if ( $( window ).scrollTop() )
-				$( ".header" ).addClass( "fixed" );
-			else
-				$( ".header" ).removeClass( "fixed" );
+	$( window ).on( "scroll", () => {
+		if ( $( window ).scrollTop() )
+			$( ".header" ).addClass( "fixed" );
+		else
+			$( ".header" ).removeClass( "fixed" );
+	} );
 
-		} );
-
-		getSheet( "1ptPkvzQbvcreLEGbPwPT5ieS384DbUSiaxDtu8ZOrl4" );
-	}
-);
+	getSheet( "2PACX-1vRkE0XN5QOYU7GBYVmQ6-xQog7Yy1TQsgulbflQbHg0y9JmDm1YC2wat8TiJXpF4IeQeC5YMS79xv8o" );
+} );
