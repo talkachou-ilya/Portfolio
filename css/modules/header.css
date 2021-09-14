@@ -139,4 +139,8 @@
     .header.fixed {
         padding: 15px 7%;
     }
+
+    .name {
+        margin-right: 15px;
+    }
 }
