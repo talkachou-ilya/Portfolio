@@ -52,8 +52,9 @@
     background-image: url("../../images/Social Icons/github.png");
 }
 
-.social-link.vk {
-    background-image: url("../../images/Social Icons/vk.png");
+.social-link.linkedin {
+    background-size: 60%;
+    background-image: url("../../images/Social Icons/linkedin.png");
 }
 
 .social-link.telegram {
